@@ -31,7 +31,7 @@ int main(void)
             DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), BLACK);
             DrawText("Hello,", 190, 200, 20, GREEN);
             DrawText("everything is working correctly!", 190, 215, 20, GREEN);
-            DrawText("Congratulations!", 190, 225, 20, GREEN);
+            DrawText("Congratulations!", 190, 230, 20, GREEN);
 
             if (scissorMode) EndScissorMode();
 
