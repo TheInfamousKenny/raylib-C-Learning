@@ -21,19 +21,17 @@ int main() {
     SetTargetFPS(60);
 
     while (!WindowShouldClose()) {
-        // Update particles
         for (int i = 0; i < MAX_PARTICLES; i++) {
             if (particles[i].active) {
                 particles[i].position.x += particles[i].velocity.x;
                 particles[i].position.y += particles[i].velocity.y;
-                particles[i].velocity.y += 0.01f; // Simulate gravity
+                particles[i].velocity.y += 0.01f;
                 particles[i].lifetime -= 0.002f;
 
                 if (particles[i].lifetime <= 0) particles[i].active = false;
             }
         }
 
-        // Create new particles
         for (int i = 0; i < MAX_PARTICLES; i++) {
             if (!particles[i].active) {
                 particles[i] = (Particle){
@@ -47,7 +45,6 @@ int main() {
             }
         }
 
-        // Draw everything
         BeginDrawing();
         ClearBackground(BLACK);
 
