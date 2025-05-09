@@ -1,7 +1,6 @@
 #include "raylib.h"
 
 int main() {
-    // Initialize Raylib
     const int screenWidth = 1910;
     const int screenHeight = 1070;
     InitWindow(screenWidth, screenHeight, "raylib is awesome!");
@@ -14,11 +13,9 @@ int main() {
     SetTargetFPS(60);
 
     while (!WindowShouldClose()) {
-        // Update ball position
         ballPosition.x += ballSpeed.x;
         ballPosition.y += ballSpeed.y;
 
-        // Check for collision with screen edges
         if (ballPosition.x <= ballRadius || ballPosition.x >= screenWidth - ballRadius) {
             ballSpeed.x *= -1;
             ballColor = (Color){ GetRandomValue(0, 255), GetRandomValue(0, 255), GetRandomValue(0, 255), 255 };
@@ -28,7 +25,6 @@ int main() {
             ballColor = (Color){ GetRandomValue(0, 255), GetRandomValue(0, 255), GetRandomValue(0, 255), 255 };
         }
 
-        // Draw everything
         BeginDrawing();
         ClearBackground(BLACK);
         DrawCircleV(ballPosition, ballRadius, ballColor);
